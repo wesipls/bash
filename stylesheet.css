@@ -80,7 +80,6 @@ p {
 
 #midblocker {
 	height: 100%;
-	min-height: 3500px;
 	width: 3px;
 	background-color: #3fb738;
 	float: left;
