@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	background-color: #0E0B16;
+}
+#topinfo {
+	width: 500px;
+	margin-left: 50px;
+	float: left;
+	position: fixed;
+}
+
+h1 {
+	font-family: 'Orbitron', sans-serif;
+	padding-left: 25px;
+	font-size: 25px;
+	color: #3fb738;
+}
+
+h2 {
+	font-family: 'Orbitron', sans-serif;
+	padding-left: 25px;
+	font-size: 20px;
+	color: #3fb738;
+}
+
+h3 {
+	font-family: 'Orbitron', sans-serif;
+	padding-left: 25px;
+	font-size: 25px;
+	color: #3fb738;
+	margin-left: 100px;
+}
+
+h4 {
+	font-family: 'Orbitron', sans-serif;
+	padding-left: 25px;
+	font-size: 50px;
+	color: #3fb738;
+}
+
+h5 {
+ 	font-family: 'Orbitron', sans-serif;
+	padding-left: 25px;
+	font-size: 30px;
+	color: #3fb738;
+	margin-top: 100px;
+}
+
+p {
+	font-family: 'Orbitron', sans-serif;
+	padding-left: 25px;
+	font-size: 20px;
+	color: #3fb738;
+}
+
+#face {
+
+	width: 200px;
+	height: 200px;
+	border-radius: 200px;
+	border: solid 2px #3fb738;
+	margin-left: 125px;
+	margin-top: -35px;
+}
+
+#leftline {
+	height: 3px;
+	width: 602px;
+	background-color: #3fb738;
+	margin-left: -100px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+#midblocker {
+	height: 100%;
+	min-height: 3500px;
+	width: 3px;
+	background-color: #3fb738;
+	float: left;
+	margin-top: -75px;
+	margin-left: 550px;
+}
+
+#contentblock {
+	padding-left: 100px;
+	width: 1000px;
+	margin-left: 550px;
+}
+
+#midline {
+	height: 3px;
+	width: 1100px;
+	background-color: #3fb738;
+	margin-top: 100px;
+}
+
+#titlemaster {
+	margin-top: -40px;
+	padding-bottom: 40px;
+}
