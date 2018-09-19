@@ -1,5 +1,11 @@
  <!DOCTYPE html>
 <html>
+<!--
+WELCOME TO THE SPAGHETTI KINGDOM!
+
+-->
+
+
   <head>
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -30,6 +36,19 @@
         scrollTop: $("#langcontent").offset().top},
   	 'slow');
 	});
+	$("#intbutton").click(function() {
+    	$('html,body').animate({
+        scrollTop: $("#intcontent").offset().top},
+  	 'slow');
+	});
+	$("#secretbutton").click(function(){
+		$(".hiderino").show();
+		});
+	$("#secretbutton").click(function(){
+		$('html,body').animate({
+		scrollTop: $(".hiderino").offset().top},
+	'slow');
+	});
 	});
 	</script>
   <link rel="stylesheet" href="stylesheet.css" type="text/css">
@@ -48,7 +67,12 @@
 <h3 id="workbutton">> &nbsp; Work experience</h3>
 <h3 id="edubutton">> &nbsp; Education</h3>
 <h3 id="langbutton">> &nbsp; Language skills</h3>
+<h3 id="intbutton">> &nbsp; Interests</h3>
+<div id="bottomrocker">
+<p id="secretbutton" style="font-size: 10px;">Created with: a keyboard, nvim and some patience. Hosted on Github.</p>
 </div>
+</div>
+
 <div id="midblocker">
 </div>
 <div id="contentblock">
@@ -131,6 +155,26 @@
 <p>CMD/Powershell&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Average</p>
 <p>Motivation to learn new languages&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Excellent</p>
 <p>Briefly worked with several other programming and markup languages when working on personal projects.</p>
+<div id="midline">
+</div>
+<h4 id="intcontent">> &nbsp; Interests</h4>
+<p>
+</p>
+<div id="midline">
+</div>
+<h4 class="hiderino">> &nbsp; Actual Skills</h4>
+<p class="hiderino">Master of google searches.<br>
+					Can copy/paste from stackoverflow faster than your average user.<br>
+					I'm pretty good at making coffee. <br>
+					I'll never do something potentially harmfull in production before runnig it in test.<br>
+					I'll never forget "No deploy friday".<br>
+					Better have one backup too many than one too few.<br>
+					I only post peer-review quality memes.<br>
+					I sometimes win Civ 5 bots on Emperor difficulty.<br>
+					I'm pretty good at modding games.<br>
+					I keep making Hello World programs in different languages.<br>
+					I use arch btw.<br>
+</p>
 <div id="constructionnotice">
 <h6>UNDER CONSTRUCTION<br>!!!</h6>
 </div>
