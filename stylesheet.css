@@ -69,6 +69,14 @@ p {
 	margin-top: -35px;
 }
 
+h3:hover {
+
+	background-color: #3fb738;;
+	color: black;
+	font-size: 30px;
+
+}
+
 #leftline {
 	height: 3px;
 	width: 602px;
