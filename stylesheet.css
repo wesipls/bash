@@ -109,6 +109,23 @@ h3:hover {
 	margin-top: 100px;
 }
 
+#bottomrocker {
+	position: fixed;
+	bottom: 0px;
+	color: #3fb738;
+	
+}
+
+.hiderino {
+	display:none;
+	
+}
+
+.copyleft {
+  display:inline-block;
+  transform: rotate(180deg);
+  }
+
 #constructionnotice {
 	position: fixed;
 	top: 0;
