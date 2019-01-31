@@ -1,0 +1,196 @@
+body {
+	background-color: #DCDCDC;
+    	font-family: 'Muli', sans-serif;
+}
+
+h1 {
+margin-top: 0px;
+width: 50%;
+float: left;
+color: white;
+padding-left: 3%;
+padding-top: 3%;
+}
+
+h2 {
+padding-left: 5%;
+color: #062F4F;
+}
+
+h3 {
+color: white;
+padding-left: 3%;
+width: 50%;
+margin-top: 0px;
+}
+
+h4 {
+color: #062F4F;
+padding-left: 5%;
+margin-bottom: 0px;
+margin-top: 0px;
+}
+
+h5 {
+color: #062F4F;
+font-size: 120%;
+text-align: center;
+
+}
+
+#icons {
+	width: 3%;
+	height: 3%;
+	padding-right: 3%;
+}
+
+#econs {
+width: 10%;
+height: 10%;
+}
+
+#stat {
+padding-left: 5%;
+color: #062F4F;
+margin-top: 0px;
+}
+
+.main {
+
+width: 50%;
+border: solid 3px #598234;
+margin: auto 25%;
+float: left;
+background-color: white;
+  -webkit-box-shadow: -7px 20px 42px -7px rgba(7,33,4,1);
+-moz-box-shadow: -7px 20px 42px -7px rgba(7,33,4,1);
+box-shadow: -7px 20px 42px -7px rgba(7,33,4,1);
+}
+
+#topbar {
+
+width: 100%;
+background-color: #062F4F;
+margin-top: 0px;
+padding-bottom: 1%;
+}
+
+#botbar {
+width: 100%;
+background-color: #062F4F;
+float: left;
+}
+
+#botter {
+	margin-bottom: 0px;
+	padding: 1%;
+	font-size: 150%;
+	display: inline-block;
+}
+
+#copies {
+color: white;
+font-size: 100%;
+margin-bottom: 0px;
+ display: inline-block;
+}
+
+a {
+text-decoration: none;
+color: white;
+}
+
+#botimg {
+	width: 10%;
+	height: 10%;
+}
+
+#face {
+	border: 5px solid #598234;
+	width: 20%;
+	height: 20%;
+	border-radius: 50%;
+	float: right;
+	margin-right: 5%;
+	margin-top: 3%;
+}
+
+#leftbox {
+width: 66%;
+float: left;
+display: table-cell;
+}
+
+#rightbox {
+width: 33%;
+float: left;
+display: table-cell;
+border-left: 3px solid #598234;
+}
+
+#plang {
+padding-left: 5%;
+color: #062F4F;
+font-weight: bold;
+}
+
+progress {
+background-color: white;
+color: #598234;
+border: 2px solid #598234;
+float: right;
+margin-top: -10%;
+width: 50%;
+padding-right: 10%;
+}
+
+#disc {
+font-size: 75%;
+padding-left: 5%;
+padding-right: 5%;
+}
+
+#leftext {
+color: #062F4F;
+padding-left: 5%;
+font-weight: bold;
+}
+
+#pros {
+width: 50%;
+float: left;
+display: table-cell;
+
+}
+
+.bluebg {
+background-color: #062F4F;
+color: white;
+padding-left: 5%;
+font-weight: bold;
+}
+
+#cons {
+width: 50%;
+float: left;
+display: table-cell;
+}
+
+#hobbyimg {
+}
+
+#hobbytext {
+width: 25%;
+font-weight: bold;
+color: #062F4F;
+padding-left: 5%;
+text-align: center;
+float: left;
+}
+
+#perlang {
+color: #062F4F;
+font-weight: bold;
+font-size: 120%;
+padding-left: 20%;
+}
