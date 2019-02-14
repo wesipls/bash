@@ -1,6 +1,9 @@
 #!/bin/bash
 
 #Finds and kills all instances running by keyword
+#First parameter is keyword
+#Example: procdrop.sh wine Would kill all running wine instances (to test a keyword use; ps aux | grep keyword, all found processes will be killed)
+
 
 counter=0
 supervar=()
