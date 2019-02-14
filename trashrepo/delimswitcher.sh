@@ -10,6 +10,7 @@ echo "What delimeter to change? (Choose number from below)
 "
 
 read reply
+echo ""
 
 if [ "$reply" == "1" ]; then
 	sed -i "s/;/\t/g" $1
