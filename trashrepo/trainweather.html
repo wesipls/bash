@@ -1,0 +1,214 @@
+<!--All files (stylesheet, js-file and markup) are on same file for convenience, all style can be found in the <style> section, js is spread out in the <head> and one line below the weather widget div-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>3.0</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Sans-serif" type="text/css">
+  <script>
+  var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+	var myObj = JSON.parse(this.responseText);
+		var times = [];
+		var dest = [];
+		var line = [];
+		var i;
+		for (i = 0; i < 5; i++) {
+			if ((myObj[i].timeTableRows[0].stationShortCode == "KLH") || (myObj[i].timeTableRows[0].stationShortCode == "KKN")) {
+				dest[i] = "HKI";
+			} else if ((myObj[i].timeTableRows[0].stationShortCode == "HKI") && (myObj[i].commuterLineID == "E")) {
+				dest[i] = "KLH";
+			} else {
+				dest[i] = "KKN";
+			}
+			line[i] = myObj[i].commuterLineID;
+			if (myObj[i].timeTableRows[0].stationShortCode == "KLH") {
+        			First1a = myObj[i].timeTableRows[7].scheduledTime;
+                		End1a = myObj[i].timeTableRows[7].scheduledTime;
+                		a1TimeFirst = First1a.slice(11, 13);
+                        	a1TimeEnd = End1a.slice(13, 16);
+                        	a1TimeFirst = parseInt(a1TimeFirst);
+                        	a1Time = a1TimeFirst +3;
+                        	times[i] = a1Time + a1TimeEnd;
+			} else if (myObj[i].timeTableRows[0].stationShortCode == "KKN") {
+        			var First2a = myObj[i].timeTableRows[19].scheduledTime;
+                		var End2a = myObj[i].timeTableRows[19].scheduledTime;
+                		a2TimeFirst = First2a.slice(11, 13);
+                        	a2TimeEnd = End2a.slice(13, 16);
+                        	a2TimeFirst = parseInt(a2TimeFirst);
+                        	a2Time = a2TimeFirst +3;
+                        	times[i] = a2Time + a2TimeEnd;
+			} else if (myObj[i].timeTableRows[0].stationShortCode == "HKI") {
+        			var First3a = myObj[i].timeTableRows[21].scheduledTime;
+                		var End3a = myObj[i].timeTableRows[21].scheduledTime;
+                		a3TimeFirst = First3a.slice(11, 13);
+                		a3TimeEnd = End3a.slice(13, 16);
+                        	a3TimeFirst = parseInt(a3TimeFirst);
+                        	a3Time = a3TimeFirst +3;
+                        	times[i] = a3Time + a3TimeEnd;
+			}
+		}
+			var list = [];
+				for (var j = 0; j < line.length; j++)
+					list.push({'line' : line[j], 'destination' : dest[j], 'timestamp' : times[j]});
+			list.sort(function(a, b) {
+				return ((a.timestamp < b.timestamp) ? -1 : ((a.timestamp == b.timestamp) ? 0 : 1));
+			});
+			for (var k = 0; k < list.length; k++) {
+				line[k] = list[k].line;
+				dest[k] = list[k].destination;
+				times[k] = list[k].timestamp;
+			} 
+			for (g = 0; g < 5; g++) {
+			document.getElementById("stamp" + g).innerHTML = times[g];
+			document.getElementById("img" + g).innerHTML = line[g];
+			document.getElementById("dest" + g).innerHTML = dest[g];
+			}
+
+
+			console.log(JSON.stringify(line));
+			console.log(JSON.stringify(dest));
+			console.log(JSON.stringify(times));
+	}
+};
+xmlhttp.open("GET", "http://rata.digitraffic.fi/api/v1/live-trains/station/KNI?arrived_trains=0&arriving_trains=6&departed_trains=0&departing_trains=0&include_nonstopping=false", true);
+xmlhttp.send();
+  </script>
+	<style>
+body {
+	background-color: #1f567c;
+	font-family: 'Arimo', sans-serif;
+
+}
+
+#trainBox {
+
+	width: 480px;
+	height: 500px;
+	margin: 0 auto;
+	background-color: #23597f;
+	margin-top: 25px;
+}
+
+#train2 {
+
+	background-color: #1f567c;
+	height: 100px;
+	padding-left: 100px;
+
+}
+
+#train1 {
+
+	height: 100px;
+	padding-left: 100px;
+
+}
+
+.Stamps {
+
+	color: white;
+	font-size: 20px;
+	margin: 0;
+	padding-top: 40px;
+	padding-left: 20px;
+	float: left;
+}
+
+.TrainImgs {
+
+	padding-top: 30px;
+	padding-left: 25px;
+	float: left;
+	height: 40px;
+
+}
+
+.arrow {
+
+	color: white;
+	padding-top: 10px;
+	float: left;
+	margin-left: -15px;
+
+}
+
+
+.Destination {
+
+	color: white;
+	font-size: 20px;
+	padding-top: 27px;
+	padding-left: 10px;
+	float: left;
+
+}
+
+.weatherwidget-io{
+
+	width: 480px;
+	margin: 0 auto;
+
+}
+
+.imgs {
+  
+	color: white;
+	font-size: 20px;
+	float: left;
+	margin-top: 33px;
+	padding-top: 7px;
+	width: 50px;
+	margin-left: 23px;
+	padding-left: 14px;
+	padding-bottom: 20px;
+	background-image: url("U.png");
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+
+}
+
+	</style>
+  </head>
+  <body>
+	<a class="weatherwidget-io" href="https://forecast7.com/en/60d2124d66/espoo/" data-label_1="ESPOO" data-label_2="WEATHER" data-font="Arimo" data-theme="original" >ESPOO WEATHER</a>
+	<script>
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+	</script>
+  	<div id="trainBox">
+	<div id="train1">
+		<h1 id="stamp0" class="Stamps"></h1>
+		<h1 id="img0" class="imgs"></h1>
+		<h1 id="" class="arrow">&rarr;</h1>
+		<h1 id="dest0" class="Destination">Kirkkonummi</h1>
+	</div>
+	<div id="train2">
+		<h1 id="stamp1" class="Stamps"></h1>
+		<h1 id="img1" class="imgs"></h1>
+		<h1 id="" class="arrow">&rarr;</h1>
+		<h1 id="dest1" class="Destination">Kirkkonummi</h1>
+	</div>
+	<div id="train1">
+		<h1 id="stamp2" class="Stamps"></h1>
+		<h1 id="img2" class="imgs"></h1>
+		<h1 id="" class="arrow">&rarr;</h1>
+		<h1 id="dest2" class="Destination">Kirkkonummi</h1>
+	</div>
+	<div id="train2">
+		<h1 id="stamp3" class="Stamps"></h1>
+		<h1 id="img3" class="imgs"></h1>
+		<h1 id="" class="arrow">&rarr;</h1>
+		<h1 id="dest3" class="Destination">Kirkkonummi</h1>
+	</div>
+	<div id="train1">
+		<h1 id="stamp4" class="Stamps"></h1>
+		<h1 id="img4" class="imgs"></h1>
+		<h1 id="" class="arrow">&rarr;</h1>
+		<h1 id="dest4" class="Destination">Kirkkonummi</h1>
+	</div>
+	</div>
+
+  </body>
+</html>
