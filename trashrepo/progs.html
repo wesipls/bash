@@ -1,1 +1,104 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Lista softista</title>
+  </head>
+  <body>
+	  <p><br><a href="https://wesipls.github.io/">Online CV</a></p>
+	  <p><br><a href="https://wesipls.github.io/trashrepo/trainweather.html">Kotitaulukko</a></p>
+	  <p> <br><br> Pari githubiin säästettyä lyhyttä bash scriptiä: </p>
+	  <p> <br><br>Lopettaa kaikki processit haetulla avainsanalla: <br><br></p>
+	  <pre style="margin-left: 100px;">
+#!/bin/bash
 
+#Finds and kills all instances running by keyword
+#First parameter is keyword
+#Example: procdrop.sh wine Would kill all running wine instances (to test a keyword use; ps aux | grep keyword, all found processes will be killed)
+
+
+counter=0
+supervar=()
+
+#Find running instances
+
+while IFS= read -r line; do
+    supervar+=( "$line" )
+done < <( ps aux | grep -v -E "grep|awk|procdrop" | grep $1 | awk '{print $2}')
+
+#Prints out the found instances
+
+echo ""
+echo "$(ps aux | grep -v -E "grep|awk|procdrop" | grep $1 | awk '{print $2, $11}')"
+echo ""
+
+#Kill running instances
+
+for i in "${supervar[@]}"; do
+		if [[ $i != $$ ]]; then
+		kill -9 "$i"
+		counter=$((counter+1))
+		fi
+done
+
+
+
+echo $counter processes killed
+echo "" </pre>
+  
+	  <p> <br><br>Tarkistaa kuinka monta kertaa kyseinen avainsana löytyy tiedostosta (vielä työn alla, voi sisältää erroreita)<br><br></p>
+	  <pre style="margin-left: 100px;">
+#!/bin/bash
+
+# Counts matches of given keyword in given file
+
+counter=0
+
+echo What are we looking for?
+read searchterm
+
+echo From what file?
+read file
+
+for i in $(cat "$file" | grep -o $searchterm); do
+    counter=$((counter+1))
+done
+
+echo "$counter"</pre>
+  
+	  <p><br><br>Muutta tiedoston delimeter/separator kohdat<br><br></p>
+	  <pre style="margin-left: 100px;">!/bin/bash
+
+#Changes file delimeters/separators to chosen option
+#First parameter in command is target file, example: delimswitcher.sh testfile
+#The rest will be read in during the script
+
+echo "What delimeter to change? (Choose number from below)
+1(; to Tab)	2(Tab to ;)	3(: to Tab)	4(Tab to :)	5(: to ;)	6(; to :)
+"
+
+read reply
+echo ""
+
+if [ "$reply" == "1" ]; then
+	sed -i "s/;/\t/g" $1
+	echo "The character ; has now been changed to tab"
+elif [ "$reply" == "2" ]; then
+	sed -i "s/\t/;/g" $1
+	echo "The character tab has now been changed to ;"
+elif [ "$reply" == "3" ];then
+	sed -i "s/:/\t/g" $1
+	echo "The character : has now been changed to tab"
+elif [ "$reply" == "4" ];then
+	sed -i "s/\t/:/g" $1
+	echo "The character tab has now been changed to :"
+elif [ "$reply" == "5" ];then
+	sed -i "s/:/;/g" $1
+	echo "The character : has now been changed to ;"
+elif [ "$reply" == "6" ];then
+	sed -i "s/;/:/g" $1
+	echo "The character ; has now been changed to :"
+fi
+	  </pre>
+  </body>
+</html>
