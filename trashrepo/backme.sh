@@ -1,7 +1,6 @@
 #!/bin/bash
 #Shell script to backup and organize messy users development folders
 #$1 is the name of the file or folder
-#THIS SCRIPT DOES NOT WORK WITH HIDDEN FOLDERS RIGHT NOW, DUE TO '.' DELIMETER BEING USED FOR CUTTING VARIABLES
 
 #Check and create backup root folder
 if [ -d "/home/$USER/BACKME" ] ; then
