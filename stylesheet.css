@@ -224,6 +224,6 @@ padding-right: 10px;
     height: 0px;
   }
   #footdata {
-	margin-left: 0px;	
+	float: left;	
   }
 }
