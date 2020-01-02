@@ -173,8 +173,8 @@ float: left;
 
 #footdata {
 	color: #002f5e;
-	margin-left: 40px;
 	margin-top: 0px;
+	margin-left: 40px;
 	padding-top: 5px;
 	margin-bottom: 0px;
 }
@@ -223,7 +223,12 @@ padding-right: 10px;
   .midline {
     height: 0px;
   }
-  #footdata {
-	float: left;	
+}
+
+@media screen and (max-width: 380px) {
+	  #footdata {
+		  margin-left: 10px;
+		  font-size: 12px;
   }
+	
 }
