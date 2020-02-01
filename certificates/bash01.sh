@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#First lesson of https://www.udemy.com/course/bash-scripting/
+#First lesson of https://www.udemy.com/course/bash-scripting/ course
 echo "Shell Scripting is Fun!"
 
 #Check host and echo it to the shell
