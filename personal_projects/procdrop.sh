@@ -33,7 +33,9 @@ if [ "$2" == "end" ]; then
 			fi 
 	done
 	echo "$counter processes found and $counter processes killed"
+	exit 0
 else
 	echo "No processes killed, add end to kill found processes, example: ./procdrop.sh steam end"
+	exit 0
 fi
 
