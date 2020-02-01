@@ -1,4 +1,5 @@
 #!/bin/bash
+#4:th excersize of udemy course, checks all given parameters if they are files, folders or something else.
 
 ls -l $@
 echo""
