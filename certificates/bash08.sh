@@ -1,5 +1,6 @@
 #!/bin/bash
-
+#8th excersize in udemy course, requires 1 folder as parameter, if folder is give counts (only) files in folder
+#If paramtere $1 is file script will exit with exit code 1
 
 file_count () {
 	local VAR="$1"
