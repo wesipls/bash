@@ -1,5 +1,5 @@
 #!/bin/bash
-#TODO: CHANGE ENDLESS ELIF STATEMENTS TI CASE SWITCHES
+#TODO: CHANGE ENDLESS ELIF STATEMENTS TO CASE SWITCHES
 
 #Changes file delimeters/separators to chosen option
 #$1 is target file, example: delimswitcher.sh testfile
