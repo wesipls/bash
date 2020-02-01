@@ -1,4 +1,5 @@
 #!/bin/bash
+#6:th excersize in udemy course, check if $1 is file or folder or undefined, each result gives a different exit code.
 
 FILE=$1
 
