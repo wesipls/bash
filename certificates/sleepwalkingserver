@@ -1,4 +1,5 @@
 #!/bin/bash
+#sleepwalking server, does nothing, used for start/stop script testing
 PID_FILE="/tmp/sleepwalkingserver.pid"
 trap "rm $PID_FILE; exit" SIGHUP SIGINT SIGTERM
 echo "$$" > $PID_FILE
