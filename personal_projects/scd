@@ -4,8 +4,7 @@
 
 #SCD = Super Change Directory, cd and list current folder
 #Add file to ~/bin/
-#Run "export PATH=$PATH:~/bin"
-#Add above line to .bashrc to make the script permanently available
+#Add export PATH=$PATH:~/bin and alias scd =". ~/bin/sdc"
 #Remember to chmod 755, run as: scd folder_name
 
 
