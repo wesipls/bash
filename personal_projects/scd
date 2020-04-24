@@ -1,4 +1,7 @@
 #!/bin/bash
+
+#USE scdinstall.sh IF YOU DON'T WANT TO CONFIGURE MANUALLY, TESTED ON DEBIAN BUSTER
+
 #SCD = Super Change Directory, cd and list current folder
 #Add file to ~/bin/
 #Run "export PATH=$PATH:~/bin"
