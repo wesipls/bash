@@ -1,0 +1,11 @@
+#!/bin/bash
+#SCD = Super Change Directory, cd and list current folder
+#Add file to ~/bin/
+#Run "export PATH=$PATH:~/bin"
+#Add above line to .bashrc to make the script permanently available
+#Remember to chmod 755, run as: scd folder_name
+
+
+cd $1
+pwd
+ls --color=auto -larth .
