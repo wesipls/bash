@@ -7,7 +7,10 @@
 #Add export PATH=$PATH:~/bin and alias scd =". ~/bin/sdc"
 #Remember to chmod 755, run as: scd folder_name
 
+GREEN='\033[0;32m'
+NC='\033[0m'
 
 cd $1
-pwd
+pdr=$(pwd)
+echo -e "${GREEN} $pdr ${NC}"
 ls --color=auto -larth .
