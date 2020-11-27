@@ -2,6 +2,8 @@
 #Install script for scd
 
 #check if ~/bin is available
+mkdir /home/$USER/bin
+
 if [ -d ~/bin ]
 then
 #Create script in bin
