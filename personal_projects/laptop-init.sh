@@ -28,7 +28,7 @@ apt-get update
 apt-get upgrade -y
  
 #Add package to this list to install
-Packages=(git neovim firefox net-tools)
+Packages=(wget curl git neovim firefox net-tools)
 
 for i in $Packages
 do
