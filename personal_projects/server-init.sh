@@ -8,6 +8,9 @@ then
 	exit 1
 fi
 
+#Installing required packages to execute script
+apt-get install  apt-transport-https curl git  wget -y
+
 #Adding docker repository
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 add-apt-repository \
@@ -19,7 +22,7 @@ apt-get update
 apt-get upgrade -y
 
 #Add package to this list to install
-Packages=(apt-transport-https ca-certificates gnupg-agent software-properties wget curl git neovim firefox net-tools openssh-server docker-ce docker-ce-cli containered.io)
+Packages=(ca-certificates gnupg-agent software-properties neovim firefox net-tools openssh-server docker-ce docker-ce-cli containered.io)
 for i in $Packages
 do
 	apt-get install $i -y
