@@ -57,7 +57,7 @@ then
 fi
 wget https://raw.githubusercontent.com/wesipls/cfg/main/daemon.json -P /etc/docker/
 systemctl restart docker
-
-echo ""
 echo "ALL DONE, PLEASE LOGOUT AND BACK IN TO UPDATE USER PERMISSIONS"
+echo "##############################################################"
+echo ""
 exit 0
