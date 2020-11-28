@@ -9,7 +9,7 @@ then
 fi
 
 #CHECK IF SYSTEM IS Debian deriative
-DERIATIVE=$(cat /etc/issue | egrep "debian|buntu|mint")
+DERIATIVE=$(cat /etc/issue | egrep "ebian|buntu|mint")
 if [ -z "$DERIATIVE" ]
 then
       echo "System not Debian deriative, exiting"
@@ -30,7 +30,7 @@ apt-get upgrade -y
 #Add package to this list to install
 Packages=(wget curl git neovim firefox net-tools)
 
-for i in $Packages
+for i in ${Packages[@]}
 do
 	apt-get install $i -y
 done
