@@ -9,7 +9,7 @@ then
 fi
 
 #Installing required packages to execute script
-apt-get install ca-certificates gnupg-agent software-properties apt-transport-https curl git wget -y
+apt-get install ca-certificates gnupg-agent apt-transport-https curl git wget -y
 
 #Adding docker repository
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
@@ -22,13 +22,31 @@ apt-get update
 apt-get upgrade -y
 
 #Add package to this list to install
-Packages=(neovim net-tools openssh-server docker-ce docker-ce-cli containered.io)
+Packages=(neovim net-tools openssh-server docker-ce docker-ce-cli containerd.io)
 for i in ${Packages[@]}
 do
 	apt-get install $i -y
 done
 
-#Start and enable ssh server
+#Start and enable services server
 systemctl start ssh
 systemctl enable ssh
+systemctl start docker
+systemctl enable docker
 
+#Configuring docker
+if grep -q docker /etc/group
+then
+	echo "group docker already exists, skipping creating group"
+else
+	groupadd docker	
+fi
+if id vesipls >/dev/null 2>&1
+then
+	usermod -aG docker vesipls
+else
+	echo "User vesipls does not exist, please give username for docker user:"
+	read dockeruser
+	usermod -aG docker $dockeruser
+fi
+exit 0
