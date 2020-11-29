@@ -54,14 +54,6 @@ else
 	usermod -aG docker $dockeruser
 fi
 
-#Fetching docker logging configs 
-if [ -f "/etc/docker/daemon.json" ]
-then
-	echo "Old daemon.json file found, replacing with new version"
-	rm -f /etc/docker/daemon.json
-fi
-wget https://raw.githubusercontent.com/wesipls/cfg/main/daemon.json -P /etc/docker/
-systemctl restart docker
 echo "ALL DONE, PLEASE LOGOUT AND BACK IN TO UPDATE USER PERMISSIONS"
 echo "##############################################################"
 echo ""
