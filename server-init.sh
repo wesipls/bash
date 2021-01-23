@@ -1,5 +1,5 @@
 #!/bin/bash
-#Init script for new laptops, only works for debian deriatives
+#Init script for new servers, only works for debian deriatives
 
 #Check if script is run as superuser
 if [ "$EUID" -ne 0 ]

@@ -1,7 +1,9 @@
-Welcome to my Github page
+Welcome to my collection of bash scripts.
 
-There has been some restructuring lately.
+Scripts that are not ready yet are commented wth #TODO.
 
-Currently only some of my personal projects as well as some courses for certificates can be found here.
+Most scripts have comments or console echos for what to do if the script is not working.
 
-More will be added when i have time to find everything locally.
+I enjoy writing bash scripts, if you have any suggestions feel free to contact me.
+
+Any scripts that are non-functional for real cases are found under the educational folder.

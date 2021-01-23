@@ -8,7 +8,8 @@ NC='\033[0m' # No Color
 BLUE='\033[1;34m' #Blue
 
 #Check if remote host available
-#GITHUB TODO Change pinged IP address to target lan device (Static IPs preffered)
+#TODO, customize remote target (user, address, folder structure"
+echo "Assuming remote storage is found on pi@192.168.1.10:/home/pi/Documents/storage/GameSaves/Civ5/"
 if ping -c 1 192.168.1.10 &> /dev/null
 then
 	echo ""
@@ -18,9 +19,10 @@ then
 	cd ~/.local/share/Aspyr/Sid\ Meier\'s\ Civilization\ 5/ModdedSaves/single/
 	while read p; do
 #Copy gamesaves to target server
-#GITHUB TODO Change folder to target folder
 	scp "$p" pi@192.168.1.10:/home/pi/Documents/storage/GameSaves/Civ5/
 	echo -e "Save file:${GREEN} $p ${NC}has been copied to BigPiPi ${BLUE}Civ5 GameSaves${NC} storage"
 	done < <((find . -maxdepth 1 -type f | sort -n | tail -4 | cut -c 3-))
 	exit 0
+else 
+	echo "Remote target not found, please change folder and server in the script"
 fi
