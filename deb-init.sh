@@ -22,7 +22,7 @@ apt-get update
 apt-get upgrade -y
 
 #Add package to this list to install
-Packages=(i3 gcc cc clang meson neovim net-tools openssh-server docker-ce docker-ce-cli containerd.io)
+Packages=(i3 feh gcc cc clang meson neovim net-tools openssh-server docker-ce docker-ce-cli containerd.io)
 for i in ${Packages[@]}
 do
 	apt-get install $i -y
@@ -41,6 +41,9 @@ systemctl enable ssh
 systemctl start docker
 systemctl enable docker
 
+#Change default terminal
+update-alternatives --set x-terminal-emulator /usr/bin/urxvt
+
 #Configuring docker groups
 if grep -q docker /etc/group
 then
@@ -48,15 +51,17 @@ then
 else
 	groupadd docker	
 fi
+#Add user to docker group, configure nvim and i3-gaps
 if id vesipls >/dev/null 2>&1
 then
 	usermod -aG docker vesipls
-	echo "While were at it let's configure nvim and i3 as user vesipls"
 	su -c ./nvim-plugins.sh vesipls
+	su -c ./de-configs-update.sh vesipls
 
 else
 	echo "User vesipls does not exist, please give username for docker user:"
 	read dockeruser
+	su -c ./nvim-plugins.sh $dockeruser
 	usermod -aG docker $dockeruser
 fi
 
@@ -67,7 +72,4 @@ then
 	sed -i "s/$LIDSTATUS/HandleLidSwitch=ignore/g" /etc/systemd/logind.conf
 fi
 
-echo "ALL DONE, PLEASE LOGOUT AND BACK IN TO UPDATE USER PERMISSIONS"
-echo "##############################################################"
-echo ""
 exit 0
