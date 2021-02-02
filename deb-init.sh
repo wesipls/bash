@@ -22,11 +22,14 @@ apt-get update
 apt-get upgrade -y
 
 #Add package to this list to install
-Packages=(neovim net-tools openssh-server docker-ce docker-ce-cli containerd.io)
+Packages=(i3 gcc cc clang meson neovim net-tools openssh-server docker-ce docker-ce-cli containerd.io)
 for i in ${Packages[@]}
 do
 	apt-get install $i -y
 done
+
+#installing i3-gaps with ./install-i3-gaps.sh
+./install-i3-gaps.sh
 
 #Installing docker-compose
 curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -48,10 +51,20 @@ fi
 if id vesipls >/dev/null 2>&1
 then
 	usermod -aG docker vesipls
+	echo "While were at it let's configure nvim and i3 as user vesipls"
+	su -c ./nvim-plugins.sh vesipls
+
 else
 	echo "User vesipls does not exist, please give username for docker user:"
 	read dockeruser
 	usermod -aG docker $dockeruser
+fi
+
+#Replace HandleLidSwitch to keep computer alive with lid closed
+LIDSTATUS=$(grep "HandleLidSwitch=" /etc/systemd/logind.conf)
+if [ "$LIDSTATUS" != "HandleLidSwitch=ignore" ]
+then
+	sed -i "s/$LIDSTATUS/HandleLidSwitch=ignore/g" /etc/systemd/logind.conf
 fi
 
 echo "ALL DONE, PLEASE LOGOUT AND BACK IN TO UPDATE USER PERMISSIONS"
