@@ -5,6 +5,11 @@ Most scripts have comments or console echos for what to do if the script is not 
 I enjoy writing bash scripts, if you have any suggestions feel free to contact me.
 Any scripts that are non-functional for real cases are found under the educational folder.
 
+I mostly use vesipls as the local user, most likely hard coded in some sections, for other users please run .
+cat "script-you-intend-to-use.sh" | grep vesipls
+and replace vesipls with your own username
+#TODO, create script to replace vesipls with user input, possibly use $USER, wont work for .config files.
+
 
 Notes:
 
