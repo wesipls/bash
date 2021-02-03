@@ -1,4 +1,4 @@
-Welcome to my collection of bash scripts.
+Welcome to my collection of bash scripts.\n
 Scripts that are not ready yet are commented wth #TODO
 Most scripts are tested on Debian buster and ubuntu bionic.
 Most scripts have comments or console echos for what to do if the script is not working.
