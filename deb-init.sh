@@ -22,7 +22,7 @@ apt-get update
 apt-get upgrade -y
 
 #Add package to this list to install
-Packages=(i3 feh gcc cc clang meson neovim net-tools openssh-server docker-ce docker-ce-cli containerd.io)
+Packages=(i3 fonts-firacode rxvt-unicode feh gcc cc clang meson neovim net-tools openssh-server docker-ce docker-ce-cli containerd.io)
 for i in ${Packages[@]}
 do
 	apt-get install $i -y
@@ -71,5 +71,8 @@ if [ "$LIDSTATUS" != "HandleLidSwitch=ignore" ]
 then
 	sed -i "s/$LIDSTATUS/HandleLidSwitch=ignore/g" /etc/systemd/logind.conf
 fi
+
+echo ""
+echo "Please set background image with feh --bg-scale /path/to/image.png, or urxvt background transparency wont work"
 
 exit 0
