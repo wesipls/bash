@@ -9,7 +9,7 @@ then
 fi
 
 #Installing required packages to execute script
-apt-get install ca-certificates gnupg-agent apt-transport-https curl git wget -y
+apt-get install ca-certificates gnupg-agent apt-transport-https curl git wget software-properties-common -y
 
 #Adding docker repository
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
